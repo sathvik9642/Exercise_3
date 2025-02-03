@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Model</title>
+</head>
+<body>
+    <h1>Weather Modeling</h1>
+    <form id="quadratic-form">
+        <label for="a">Coefficient a:</label>
+        <input type="text" id="a" name="a"><br><br>
+        <label for="b">Coefficient b:</label>
+        <input type="text" id="b" name="b"><br><br>
+        <label for="c">Coefficient c:</label>
+        <input type="text" id="c" name="c"><br><br>
+        <label for="t">Time (t):</label>
+        <input type="text" id="t" name="t"><br><br>
+        <button type="button" onclick="calculate()">Calculate</button>
+    </form>
+    <p id="output"></p>
+    <script>
+        function calculate() {
+            const a = parseFloat(document.getElementById('a').value);
+            const b = parseFloat(document.getElementById('b').value);
+            const c = parseFloat(document.getElementById('c').value);
+            const t = parseFloat(document.getElementById('t').value);
+            const temperature = a * t * t + b * t + c;
+            document.getElementById('output').innerText = `Temperature: ${temperature}°C`;
+        }
+    </script>
+</body>
+</html>
